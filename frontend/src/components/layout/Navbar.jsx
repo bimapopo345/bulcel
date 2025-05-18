@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -13,9 +14,12 @@ const Navbar = () => {
         className="aspect-[1.37] object-contain w-[82px] self-stretch shrink-0 my-auto"
       />
       <div className="self-stretch flex min-w-60 items-center gap-[30px] w-[406px] my-auto">
-        <div className="text-black text-[15px] font-medium text-center self-stretch w-[70px] my-auto">
+        <Link
+          to="/search"
+          className="text-black text-[15px] font-medium text-center self-stretch w-[70px] my-auto cursor-pointer"
+        >
           SEARCH
-        </div>
+        </Link>
         <div className="text-black text-[15px] font-medium text-center self-stretch w-[70px] my-auto">
           FORUM
         </div>

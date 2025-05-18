@@ -1,0 +1,7 @@
+>> dari kode saya ambil dibawah ini, buatkan Search_HomePage.jsx, isinya 1 file ya jangan aneh aneh : ( buatkan tampilan aja jangan backend dulu )
+
+>> note karena tanpa backend dulu karena mau test, anggap ja resi apapun berhasil dulu
+
+
+--=-= code Search_HomePage.jsx
+

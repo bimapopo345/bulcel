@@ -9,6 +9,7 @@ import Reset_Password from "./components/auth/Reset_Password";
 import Reset_Password_Successfull from "./components/auth/Reset_Password_Successfull";
 import Register_Organizer from "./components/auth/Register_Organizer";
 import Register_Organizer_Successfull from "./components/auth/Register_Organizer_Successfull";
+import Search_HomePage from "./components/search/page/Search_HomePage";
 import "./App.css";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           path="/register-organizer-success"
           element={<Register_Organizer_Successfull />}
         />
+        <Route path="/search" element={<Search_HomePage />} />
       </Routes>
     </Router>
   );
