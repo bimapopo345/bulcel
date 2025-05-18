@@ -1,24 +1,21 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
-import MainContent from "./components/MainContent";
 
 const AdminLayout = () => {
   return (
     <div className="min-h-screen bg-[#FCEDDA]">
-      {/* Top Spacing */}
-      <div className="h-2.5" />
-
       {/* Main Container */}
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex flex-col lg:flex-row gap-5">
-          {/* Sidebar */}
-          <div className="w-full lg:w-[280px] lg:min-w-[280px]">
+      <div className="h-full">
+        <div className="flex h-full">
+          {/* Sidebar - Fixed width, full height */}
+          <div className="w-[280px] min-w-[280px] h-full sticky top-0">
             <Sidebar />
           </div>
 
           {/* Main Content Area */}
-          <div className="flex-1">
-            <MainContent />
+          <div className="flex-1 px-6 py-4">
+            <Outlet />
           </div>
         </div>
       </div>

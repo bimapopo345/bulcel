@@ -5,11 +5,11 @@ const SidebarSection = ({ title, children, defaultOpen = false }) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
-    <div className="mt-4">
+    <div className="mt-6">
       {/* Section Header */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between px-2 py-1"
+        className="w-full flex items-center justify-between px-4 py-2 mb-2"
       >
         <span className="text-lg font-bold">{title}</span>
         <span
@@ -24,7 +24,7 @@ const SidebarSection = ({ title, children, defaultOpen = false }) => {
       {/* Section Content */}
       <div
         className={`
-          mt-2 space-y-1 overflow-hidden transition-all duration-200
+          overflow-hidden transition-all duration-200
           ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}
         `}
       >

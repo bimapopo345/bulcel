@@ -14,6 +14,8 @@ import Refund from "./components/refund/Refund";
 import Refund_Successful from "./components/refund/Refund_Successful";
 import Login_Admin from "./components/auth/Login_Admin";
 import AdminLayout from "./components/admin/AdminLayout";
+import AdminWorkshopList from "./components/admin/admin_Workshop_List";
+import MainContent from "./components/admin/components/MainContent";
 import "./App.css";
 
 function App() {
@@ -39,7 +41,10 @@ function App() {
         <Route path="/refund" element={<Refund />} />
         <Route path="/refund-success" element={<Refund_Successful />} />
         <Route path="/login-admin" element={<Login_Admin />} />
-        <Route path="/admin" element={<AdminLayout />} />
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<MainContent />} />
+          <Route path="workshop-list" element={<AdminWorkshopList />} />
+        </Route>
       </Routes>
     </Router>
   );

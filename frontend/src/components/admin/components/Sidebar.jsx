@@ -1,25 +1,37 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import SidebarItem from "./SidebarItem";
 import SidebarSection from "./SidebarSection";
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+
   const [sections] = useState([
     {
       title: "WORKSHOPS",
-      items: ["Workshop List", "Workshop Submissions"],
+      items: [
+        { name: "Workshop List", path: "workshop-list" },
+        { name: "Workshop Submissions", path: "workshop-submissions" },
+      ],
     },
     {
       title: "PAYMENTS",
-      items: ["Order Request", "Refund Request"],
+      items: [
+        { name: "Order Request", path: "order-request" },
+        { name: "Refund Request", path: "refund-request" },
+      ],
     },
     {
       title: "OTHER FEATURES",
-      items: ["Forum List", "Creative Corner"],
+      items: [
+        { name: "Forum List", path: "forum-list" },
+        { name: "Creative Corner", path: "creative-corner" },
+      ],
     },
   ]);
 
   return (
-    <div className="bg-[#FFDEB5] rounded-lg shadow-lg">
+    <div className="bg-[#FFDEB5] rounded-lg shadow-lg h-screen sticky top-0">
       {/* Header */}
       <div className="bg-[#FF570C] rounded-t-lg py-6 px-4">
         <div className="text-center">
@@ -45,15 +57,17 @@ const Sidebar = () => {
       </div>
 
       {/* Navigation */}
-      <nav className="p-4">
+      <nav className="p-4 overflow-y-auto">
         {/* Analytics */}
-        <SidebarItem active>Analytics</SidebarItem>
+        <SidebarItem to="/admin">Analytics</SidebarItem>
 
         {/* Sections */}
         {sections.map((section, index) => (
           <SidebarSection key={index} title={section.title} defaultOpen={true}>
             {section.items.map((item, itemIndex) => (
-              <SidebarItem key={itemIndex}>{item}</SidebarItem>
+              <SidebarItem key={itemIndex} to={`/admin/${item.path}`}>
+                {item.name}
+              </SidebarItem>
             ))}
           </SidebarSection>
         ))}
@@ -61,7 +75,7 @@ const Sidebar = () => {
         {/* Logout Button */}
         <div className="mt-6">
           <button
-            onClick={() => (window.location.href = "/login-admin")}
+            onClick={() => navigate("/login-admin")}
             className="w-full text-center py-2 text-[#FF5126] hover:text-[#FF570C] transition-colors font-medium"
           >
             Logout
