@@ -7,6 +7,8 @@ import Register from "./components/auth/Register";
 import Register_Successfull from "./components/auth/Register_Successfull";
 import Reset_Password from "./components/auth/Reset_Password";
 import Reset_Password_Successfull from "./components/auth/Reset_Password_Successfull";
+import Register_Organizer from "./components/auth/Register_Organizer";
+import Register_Organizer_Successfull from "./components/auth/Register_Organizer_Successfull";
 import "./App.css";
 
 function App() {
@@ -22,6 +24,11 @@ function App() {
         <Route
           path="/reset-password-success"
           element={<Reset_Password_Successfull />}
+        />
+        <Route path="/register-organizer" element={<Register_Organizer />} />
+        <Route
+          path="/register-organizer-success"
+          element={<Register_Organizer_Successfull />}
         />
       </Routes>
     </Router>

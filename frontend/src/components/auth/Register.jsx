@@ -24,6 +24,10 @@ const Register = () => {
     }));
   };
 
+  const handleCreateOrganizerAccount = () => {
+    navigate("/register-organizer");
+  };
+
   return (
     <main className="flex flex-col items-stretch bg-[#FCEDDA] min-h-screen">
       <div className="flex flex-1">
@@ -31,7 +35,7 @@ const Register = () => {
           {/* Left side - Image - 50% */}
           <div className="w-1/2 flex items-center justify-center p-8 max-md:hidden">
             <img
-              src="https://cdn.builder.io/api/v1/image/assets/cc19c8fb85a142d1a49f6d5b2b38adc8/a234bda996e47dbbe7a5cc288110383e53c6cdc7?placeholderIfAbsent=true"
+              src="https://cdn.builder.io/api/v1/image/assets/cc19c8fb85a142d1a49f6d5b2b38adc8/bfbd4cb16b365e1694925c5aa26bac5b583b306f?placeholderIfAbsent=true"
               alt="Register Illustration"
               className="w-full h-auto max-w-[650px] rounded-[15px]"
             />
@@ -105,43 +109,12 @@ const Register = () => {
 
                     <button
                       type="submit"
-                      className="text-black w-full min-h-[55px] text-xl bg-[#FFDEB5] mt-5 px-2.5 py-[13px] rounded-[50px] hover:bg-[#FFD19F] transition-colors"
+                      className="w-full text-black min-h-[55px] text-xl bg-[#FFDEB5] mt-5 px-2.5 py-[13px] rounded-[50px] hover:bg-[#FFD19F] transition-colors"
                     >
                       SIGN UP
                     </button>
                   </div>
                 </form>
-
-                <div className="mt-5 text-center">
-                  <p className="text-xs text-black leading-7">
-                    Or sign up with
-                  </p>
-                  <div className="flex gap-0.5 mt-5 justify-between">
-                    <button
-                      type="button"
-                      className="flex items-center justify-center gap-2.5 w-[244px] bg-black text-[#F7F7F7] p-2.5 rounded-[50px] hover:bg-gray-800 transition-colors"
-                    >
-                      <img
-                        src="https://cdn.builder.io/api/v1/image/assets/cc19c8fb85a142d1a49f6d5b2b38adc8/4b73c99b6bc3b6c5b399a4429b867233b146a523?placeholderIfAbsent=true"
-                        alt="Google"
-                        className="w-4 h-4"
-                      />
-                      <span>Google</span>
-                    </button>
-
-                    <button
-                      type="button"
-                      className="flex items-center justify-center gap-2.5 w-[244px] bg-black text-[#F7F7F7] p-2.5 rounded-[50px] hover:bg-gray-800 transition-colors"
-                    >
-                      <img
-                        src="https://cdn.builder.io/api/v1/image/assets/cc19c8fb85a142d1a49f6d5b2b38adc8/bcfe9bf30e2d0de46bc1e3c1698fd8e3437a149a?placeholderIfAbsent=true"
-                        alt="Facebook"
-                        className="w-[17px] h-[17px]"
-                      />
-                      <span>Facebook</span>
-                    </button>
-                  </div>
-                </div>
 
                 <div className="mt-5">
                   <p className="text-center text-base text-black leading-7">
@@ -149,6 +122,7 @@ const Register = () => {
                   </p>
                   <button
                     type="button"
+                    onClick={handleCreateOrganizerAccount}
                     className="w-full text-xl text-black font-bold bg-[#FFDEB5] mt-2 px-[43px] py-5 rounded-[50px] hover:bg-[#FFD19F] transition-colors"
                   >
                     Create Organizer Account
