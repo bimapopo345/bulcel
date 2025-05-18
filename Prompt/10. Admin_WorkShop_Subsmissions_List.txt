@@ -1,0 +1,19 @@
+>> dari kode saya ambil dibawah ini, buatkan  admin_Workhop_Subsmission.jsx, isinya 1 file ya jangan aneh aneh : ( buatkan tampilan aja jangan backend dulu )
+
+batkan juga lah route nya anjing di sidebar /admin kan ada list banyak, salah satunya ada Workhop Subsmissions, pas ditekan arah kesini dong, jangan lupa di app.js juga
+
+duh pas di /admin, sebelum kamu edit tadi malah ilang anjing isi isinya ya allah, jangan diilangin codingan yg ada!! kan saya cuman minta tambahin path route aja, jangan ubah yg /admin
+
+saat di /admin >> itukan disidebar ada Workshop List, pas ditekan larikan file admin_Workhop_Subsmission.jsx
+
+Sekalian file code dibawha semua itu ga responsive dan berantakan css nya, benerin dan bagusan yaaa..... bair masuk ketable dll
+
+
+>> note karena tanpa backend dulu karena mau test, anggap ja resi apapun berhasil dulu
+
+ikutin dari yg punya saya tadi aja, tapi bagusin dikit dan responsive kalau bisa, jangan ada animation malah susah nanti
+
+
+sekalian bagusan design nya biar ga kacau banget
+
+--=-= code  admin_Workhop_Subsmission.jsx

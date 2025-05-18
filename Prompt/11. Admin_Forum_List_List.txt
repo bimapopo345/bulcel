@@ -1,0 +1,562 @@
+>> dari kode saya ambil dibawah ini, buatkan  admin_Forum_List.jsx, isinya 1 file ya jangan aneh aneh : ( buatkan tampilan aja jangan backend dulu )
+
+batkan juga lah route nya anjing di sidebar /admin kan ada list banyak, salah satunya ada Forum List, pas ditekan arah kesini dong, jangan lupa di app.js juga
+
+ingat ya perbaiki design soalnya  code saya dibawah belum bagus 
+
+duh pas di /admin, sebelum kamu edit tadi malah ilang anjing isi isinya ya allah, jangan diilangin codingan yg ada!! kan saya cuman minta tambahin path route aja, jangan ubah yg /admin
+
+saat di /admin >> itukan disidebar ada Forum List, pas ditekan larikan file admin_Forum_List,jsx
+
+Sekalian file code dibawha semua itu ga responsive dan berantakan css nya, benerin dan bagusan yaaa..... bair masuk ketable dll
+
+
+>> note karena tanpa backend dulu karena mau test, anggap ja resi apapun berhasil dulu
+
+ikutin dari yg punya saya tadi aja, tapi bagusin dikit dan responsive kalau bisa, jangan ada animation malah susah nanti
+
+
+sekalian bagusan design nya biar ga kacau banget
+
+
+
+--=-= code  admin_Forum_List.jsx
+
+
+import React from "react";
+import AdminSidebar from "./AdminSidebar";
+import ForumList from "./ForumList";
+
+const AdminForumList: React.FC = () => {
+  return (
+    <div
+      className="overflow-hidden bg-[#FCEDDA] pl-2.5 pr-[70px] pt-2.5 pb-[18px] max-md:pr-5"
+      space={50}
+    >
+      <div className="gap-5 flex max-md:flex-col max-md:items-stretch">
+        <div className="w-[23%] max-md:w-full max-md:ml-0">
+          <AdminSidebar />
+        </div>
+        <div className="w-[77%] ml-5 max-md:w-full max-md:ml-0">
+          <ForumList />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AdminForumList;
+
+import React from "react";
+
+const AdminSidebar: React.FC = () => {
+  return (
+    <div className="items-stretch shadow-[5px_5px_10px_0px_rgba(0,0,0,0.25)] flex min-h-[822px] grow flex-col w-full bg-[#FFDEB5] rounded-lg">
+      <div className="justify-center items-center flex min-h-[120px] w-full flex-col text-[#FCEDDA] text-center bg-[#FF570C] rounded-lg">
+        <div className="flex h-[45px] w-[158px] max-w-full flex-col pt-2.5 px-2.5">
+          <div className="text-[#FCEDDA] text-xl font-bold">TIKET KARYA</div>
+          <div className="text-[#FCEDDA] text-[64px] font-normal leading-[0.5] opacity-25 max-md:text-[40px]">
+            TK
+          </div>
+        </div>
+      </div>
+      <div className="self-center w-[237px] max-w-full mt-[30px]">
+        <div className="flex w-full items-center gap-[5px] p-2.5">
+          <div className="justify-center items-center aspect-[1/1] border border-[color:var(--Dark-Cream,#FFDEB5)] self-stretch flex min-h-[55px] gap-2.5 w-[55px] h-[55px] bg-[#FF5126] my-auto px-2.5 rounded-[50px] border-solid">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/cc19c8fb85a142d1a49f6d5b2b38adc8/97a09fd7d997b9e2073117bbe38f75ff22be3412?placeholderIfAbsent=true"
+              alt="Admin profile"
+              className="aspect-[1] object-contain w-[35px] flex-1 shrink basis-[0%]"
+            />
+          </div>
+          <div className="self-stretch gap-2.5 text-lg text-black font-normal text-center leading-loose my-auto px-2.5">
+            Admin XYZ
+          </div>
+        </div>
+        <div className="w-full mt-5">
+          <div className="text-black self-stretch w-full gap-2.5 text-xl font-medium whitespace-nowrap text-center p-2.5 rounded-md">
+            Analytics
+          </div>
+          <div className="w-full mt-2.5">
+            <div className="flex w-full items-center gap-[40px_87px] justify-between">
+              <div className="text-black text-xl font-bold text-center self-stretch my-auto">
+                WORKSHOPS
+              </div>
+              <div className="rotate-[1.5707963267948966rad] self-stretch flex items-center overflow-hidden my-auto px-0.5 py-[9px]">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/cc19c8fb85a142d1a49f6d5b2b38adc8/43586a291a317a8278e832173ecce91273b351ef?placeholderIfAbsent=true"
+                  alt="Expand"
+                  className="aspect-[1.75] object-contain w-[21px] self-stretch my-auto"
+                />
+              </div>
+            </div>
+            <div className="w-full text-xl text-black font-medium text-center mt-[5px]">
+              <div className="text-black self-stretch w-full gap-2.5 p-2.5 rounded-md">
+                Workshop List
+              </div>
+              <div className="text-black self-stretch w-full gap-2.5 p-2.5 rounded-md">
+                Workshop Submissions
+              </div>
+            </div>
+          </div>
+          <div className="w-full mt-2.5">
+            <div className="flex w-full items-center gap-[40px_99px] justify-between">
+              <div className="text-black text-xl font-bold text-center self-stretch my-auto">
+                PAYMENTS
+              </div>
+              <div className="rotate-[1.5707963267948966rad] self-stretch flex items-center overflow-hidden my-auto px-0.5 py-[9px]">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/cc19c8fb85a142d1a49f6d5b2b38adc8/43586a291a317a8278e832173ecce91273b351ef?placeholderIfAbsent=true"
+                  alt="Expand"
+                  className="aspect-[1.75] object-contain w-[21px] self-stretch my-auto"
+                />
+              </div>
+            </div>
+            <div className="w-full text-xl text-black font-medium text-center mt-[5px]">
+              <div className="text-black self-stretch w-full gap-2.5 p-2.5 rounded-md">
+                Order Request
+              </div>
+              <div className="text-black self-stretch w-full gap-2.5 p-2.5 rounded-md">
+                Refund Request
+              </div>
+            </div>
+          </div>
+          <div className="w-full mt-2.5">
+            <div className="flex w-full items-center gap-[29px] justify-between">
+              <div className="text-black text-xl font-bold text-center self-stretch my-auto">
+                OTHER FEATURES
+              </div>
+              <div className="rotate-[1.5707963267948966rad] self-stretch flex items-center overflow-hidden my-auto px-0.5 py-[9px]">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/cc19c8fb85a142d1a49f6d5b2b38adc8/43586a291a317a8278e832173ecce91273b351ef?placeholderIfAbsent=true"
+                  alt="Expand"
+                  className="aspect-[1.75] object-contain w-[21px] self-stretch my-auto"
+                />
+              </div>
+            </div>
+            <div className="w-full text-xl text-black font-medium text-center mt-[5px]">
+              <div className="text-black self-stretch w-full gap-2.5 p-2.5 rounded-md">
+                Forum List
+              </div>
+              <div className="text-black self-stretch w-full gap-2.5 p-2.5 rounded-md">
+                Creative Corner
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AdminSidebar;
+
+
+import React, { useState } from "react";
+import SearchBar from "./SearchBar";
+import ForumListItem from "./ForumListItem";
+import Pagination from "./Pagination";
+
+interface ForumTopic {
+  id: number;
+  topic: string;
+  replies: number;
+  author: string;
+}
+
+const ForumList: React.FC = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // Mock data for forum topics
+  const forumTopics: ForumTopic[] = [
+    {
+      id: 1,
+      topic: "What should I bring to a batik workshop?",
+      replies: 4,
+      author: "Nabila Sari"
+    },
+    {
+      id: 2,
+      topic: "Show us what you made! Share your finished pieces here",
+      replies: 21,
+      author: "Andika Mahesa"
+    },
+    {
+      id: 3,
+      topic: "Looking for textile workshops happening this month",
+      replies: 12,
+      author: "Maya Rizky"
+    },
+    {
+      id: 4,
+      topic: "How long does it take to get your fired pottery back?",
+      replies: 3,
+      author: "Nanda Fikri"
+    },
+    {
+      id: 5,
+      topic: "Can I join a workshop even if I'm not artistic?",
+      replies: 43,
+      author: "Joko Rahman"
+    }
+  ];
+
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+    setCurrentPage(1);
+  };
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
+  const handleViewTopic = (id: number) => {
+    console.log(`Viewing topic with ID: ${id}`);
+  };
+
+  const handleDeleteTopic = (id: number) => {
+    console.log(`Deleting topic with ID: ${id}`);
+  };
+
+  return (
+    <div className="w-full self-stretch my-auto max-md:max-w-full">
+      <div className="flex w-[334px] max-w-full flex-col items-stretch text-black">
+        <div className="flex items-center gap-[5px] text-lg font-semibold leading-loose">
+          <div className="text-black self-stretch my-auto">Admin</div>
+          <div className="self-stretch my-auto">/</div>
+          <div className="self-stretch my-auto">Forum List</div>
+        </div>
+        <div className="min-h-[70px] w-full mt-5">
+          <h1 className="text-4xl font-bold flex-1">Forum List</h1>
+          <p className="text-base font-normal leading-7 mt-[5px]">
+            Check the sales, user counts, and Topic Posted
+          </p>
+        </div>
+      </div>
+      
+      <div className="flex max-w-full w-[1010px] items-center gap-10 flex-wrap mt-[25px]">
+        <div className="self-stretch text-base text-black font-normal whitespace-nowrap w-[120px] my-auto rounded-[30px]">
+          <div className="text-black border-[color:var(--Black,#000)] bg-[#FCEDDA] px-3 py-[15px] rounded-[30px] border-2 border-solid max-md:pl-5">
+            FILTERS
+          </div>
+        </div>
+        <SearchBar onSearch={handleSearch} />
+      </div>
+      
+      <div className="flex w-full flex-col items-stretch mt-[25px] max-md:max-w-full">
+        <div className="w-full max-md:max-w-full">
+          {/* Table Header */}
+          <div className="justify-center items-center flex min-h-[60px] w-full flex-col text-lg text-black font-bold whitespace-nowrap leading-loose bg-[#FFDEB5] py-[11px] border-b-black border-b border-solid max-md:max-w-full">
+            <div className="flex h-[38px] w-full max-w-[1010px] items-center gap-[40px_100px] justify-between flex-wrap px-5 max-md:max-w-full">
+              <div className="text-black self-stretch gap-2.5 my-auto p-2.5">
+                Topic
+              </div>
+              <div className="self-stretch flex min-w-60 items-center gap-[27px] justify-between flex-wrap w-[504px] my-auto max-md:max-w-full">
+                <div className="text-black self-stretch gap-2.5 w-[100px] my-auto p-2.5">
+                  Replies
+                </div>
+                <div className="text-black self-stretch gap-2.5 w-[200px] my-auto p-2.5">
+                  Author
+                </div>
+                <div className="text-black self-stretch gap-2.5 w-[150px] my-auto p-2.5">
+                  Action
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Forum List Items */}
+          {forumTopics.map((topic, index) => (
+            <ForumListItem
+              key={topic.id}
+              topic={topic.topic}
+              replies={topic.replies}
+              author={topic.author}
+              isAlternate={index % 2 !== 0}
+              onView={() => handleViewTopic(topic.id)}
+              onDelete={() => handleDeleteTopic(topic.id)}
+            />
+          ))}
+        </div>
+        
+        {/* Pagination */}
+        <Pagination
+          currentPage={currentPage}
+          totalPages={68}
+          onPageChange={handlePageChange}
+        />
+      </div>
+    </div>
+  );
+};
+
+export default ForumList;
+
+import React from "react";
+
+interface ForumListItemProps {
+  topic: string;
+  replies: number;
+  author: string;
+  isAlternate?: boolean;
+  onView?: () => void;
+  onDelete?: () => void;
+}
+
+const ForumListItem: React.FC<ForumListItemProps> = ({
+  topic,
+  replies,
+  author,
+  isAlternate = false,
+  onView = () => {},
+  onDelete = () => {},
+}) => {
+  const bgColor = isAlternate ? "bg-[#FFDEB5]" : "bg-[#FCEDDA]";
+
+  return (
+    <div className={`justify-center items-center flex min-h-[60px] w-full flex-col ${bgColor} py-[11px] border-b-black border-b border-solid`}>
+      <div className="flex h-[38px] w-full max-w-[1010px] items-center gap-[31px] justify-between flex-wrap px-5">
+        <div className="text-black self-stretch min-w-60 gap-2.5 text-lg font-normal leading-loose my-auto p-2.5">
+          {topic}
+        </div>
+        <div className="self-stretch flex min-w-60 items-center gap-[27px] justify-between flex-wrap w-[504px] my-auto">
+          <div className="text-black self-stretch gap-2.5 text-lg font-normal whitespace-nowrap leading-loose w-[100px] my-auto p-2.5">
+            {replies}
+          </div>
+          <div className="text-black self-stretch gap-2.5 text-lg font-normal leading-loose w-[200px] my-auto p-2.5">
+            {author}
+          </div>
+          <div className="self-stretch flex items-center gap-2.5 justify-center w-[150px] my-auto pl-1 pr-[3px] py-2.5">
+            <div className="self-stretch flex w-[143px] items-center gap-[15px] justify-center my-auto">
+              <button onClick={onView}>
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/cc19c8fb85a142d1a49f6d5b2b38adc8/b75ad23476b514dcc6467eca96a6ea4670fbb2f0?placeholderIfAbsent=true"
+                  alt="View"
+                  className="aspect-[1] object-contain w-6 self-stretch shrink-0 my-auto"
+                />
+              </button>
+              <button onClick={onDelete}>
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/cc19c8fb85a142d1a49f6d5b2b38adc8/a6007ff882df7cdd4e164e6e28384e26c7a302b6?placeholderIfAbsent=true"
+                  alt="Delete"
+                  className="aspect-[1] object-contain w-6 self-stretch shrink-0 my-auto"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ForumListItem;
+
+import React from "react";
+
+interface PaginationProps {
+  currentPage: number;
+  totalPages: number;
+  onPageChange: (page: number) => void;
+}
+
+const Pagination: React.FC<PaginationProps> = ({
+  currentPage,
+  totalPages,
+  onPageChange,
+}) => {
+  const isPreviousDisabled = currentPage === 1;
+  const isNextDisabled = currentPage === totalPages;
+
+  const handlePrevious = () => {
+    if (!isPreviousDisabled) {
+      onPageChange(currentPage - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (!isNextDisabled) {
+      onPageChange(currentPage + 1);
+    }
+  };
+
+  // Generate page numbers to display
+  const getPageNumbers = () => {
+    const pages = [];
+    
+    // Always show first page
+    pages.push(1);
+    
+    // Show ellipsis if needed
+    if (currentPage > 3) {
+      pages.push("...");
+    }
+    
+    // Show current page and surrounding pages
+    for (let i = Math.max(2, currentPage - 1); i <= Math.min(totalPages - 1, currentPage + 1); i++) {
+      if (i !== 1 && i !== totalPages) {
+        pages.push(i);
+      }
+    }
+    
+    // Show ellipsis if needed
+    if (currentPage < totalPages - 2) {
+      pages.push("...");
+    }
+    
+    // Always show last page if there is more than one page
+    if (totalPages > 1) {
+      pages.push(totalPages);
+    }
+    
+    return pages;
+  };
+
+  return (
+    <div className="items-center self-center flex gap-[var(--sds-size-space-200)] text-base text-[color:var(--sds-color-text-default-default)] font-normal whitespace-nowrap leading-none flex-wrap mt-10">
+      <button
+        onClick={handlePrevious}
+        disabled={isPreviousDisabled}
+        className={`justify-center items-center rounded-[var(--sds-size-radius-200)] ${
+          isPreviousDisabled ? "opacity-50" : ""
+        } self-stretch flex gap-[var(--sds-size-space-200)] text-[color:var(--sds-color-text-default-secondary)] pt-[var(--sds-size-space-200)] pr-[var(--sds-size-space-300)] pb-[var(--sds-size-space-200)] pl-[var(--sds-size-space-300)] my-auto`}
+      >
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/cc19c8fb85a142d1a49f6d5b2b38adc8/a5d343729f3554976d79de2376698becd752cf20?placeholderIfAbsent=true"
+          alt="Previous"
+          className="aspect-[1] object-contain w-4 self-stretch shrink-0 my-auto"
+        />
+        <div className="text-[color:var(--sds-color-text-default-secondary)] text-[length:var(--sds-typography-body-size-medium)] font-[number:var(--sds-typography-body-font-weight-regular)] self-stretch my-auto">
+          Previous
+        </div>
+      </button>
+      
+      <div className="items-center self-stretch flex min-w-60 gap-[var(--sds-size-space-200)] my-auto">
+        {getPageNumbers().map((page, index) => (
+          typeof page === "number" ? (
+            <button
+              key={index}
+              onClick={() => onPageChange(page)}
+              className={`text-[length:var(--sds-typography-body-size-medium)] font-[number:var(--sds-typography-body-font-weight-regular)] rounded-[var(--sds-size-radius-200)] self-stretch w-8 h-8 pt-[var(--sds-size-space-200)] pr-[var(--sds-size-space-300)] pb-[var(--sds-size-space-200)] pl-[var(--sds-size-space-300)] ${
+                page === currentPage
+                  ? "text-[color:var(--sds-color-text-brand-on-brand)] bg-[#FF5126]"
+                  : "text-[color:var(--sds-color-text-default-default)]"
+              }`}
+            >
+              {page}
+            </button>
+          ) : (
+            <div
+              key={index}
+              className="text-black text-[length:var(--sds-typography-scale-03)] font-bold self-stretch leading-[1.4] pt-[var(--sds-size-space-200)] pr-[var(--sds-size-space-400)] pb-[var(--sds-size-space-200)] pl-[var(--sds-size-space-400)] my-auto rounded-lg"
+            >
+              ...
+            </div>
+          )
+        ))}
+      </div>
+      
+      <button
+        onClick={handleNext}
+        disabled={isNextDisabled}
+        className={`justify-center items-center rounded-[var(--sds-size-radius-200)] ${
+          isNextDisabled ? "opacity-50" : ""
+        } self-stretch flex gap-[var(--sds-size-space-200)] pt-[var(--sds-size-space-200)] pr-[var(--sds-size-space-300)] pb-[var(--sds-size-space-200)] pl-[var(--sds-size-space-300)] my-auto`}
+      >
+        <div className="text-[color:var(--sds-color-text-default-default)] text-[length:var(--sds-typography-body-size-medium)] font-[number:var(--sds-typography-body-font-weight-regular)] self-stretch my-auto">
+          Next
+        </div>
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/cc19c8fb85a142d1a49f6d5b2b38adc8/7a75dc50837b580d941598b5af5cc28472142982?placeholderIfAbsent=true"
+          alt="Next"
+          className="aspect-[1] object-contain w-4 self-stretch shrink-0 my-auto"
+        />
+      </button>
+    </div>
+  );
+};
+
+export default Pagination;
+
+import React from "react";
+
+interface SearchBarProps {
+  placeholder?: string;
+  buttonText?: string;
+  onSearch?: (searchText: string) => void;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({
+  placeholder = "Search Text",
+  buttonText = "Search",
+  onSearch = () => {},
+}) => {
+  const [searchText, setSearchText] = React.useState("");
+
+  const handleSearch = () => {
+    onSearch(searchText);
+  };
+
+  return (
+    <div className="items-stretch self-stretch flex min-w-60 min-h-[60px] flex-col justify-center w-[400px] bg-[#FEE4C4] px-5 py-1.5 rounded-lg">
+      <div className="flex w-full items-center gap-[40px_73px] justify-between flex-1 h-full">
+        <div className="self-stretch flex items-center gap-[15px] my-auto">
+          <div className="self-stretch flex items-center w-12 my-auto">
+            <div className="self-stretch flex min-h-12 w-12 flex-col items-center justify-center my-auto">
+              <div className="flex w-full max-w-10 items-center gap-2.5 overflow-hidden justify-center rounded-[100px]">
+                <div className="self-stretch flex w-10 items-center gap-2.5 justify-center my-auto p-2">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets/cc19c8fb85a142d1a49f6d5b2b38adc8/60417cb378d43d78584e8f99017e90c675f4d68f?placeholderIfAbsent=true"
+                    alt="Search icon"
+                    className="aspect-[1] object-contain w-6 self-stretch my-auto"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <input
+            type="text"
+            placeholder={placeholder}
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+            className="bg-transparent text-[rgba(121,121,121,1)] text-[15px] font-medium self-stretch my-auto outline-none w-full"
+          />
+        </div>
+        <div className="self-stretch flex items-center gap-[23px] my-auto">
+          <div className="self-stretch flex items-center gap-[15px] w-0 my-auto">
+            <div className="border self-stretch min-h-[35px] w-0 my-auto border-[rgba(69,69,69,1)] border-solid" />
+          </div>
+          <button
+            onClick={handleSearch}
+            className="text-[#F7F7F7] self-stretch min-h-[35px] gap-[5px] text-base font-normal whitespace-nowrap w-[120px] bg-black my-auto px-2.5 py-1.5"
+          >
+            {buttonText}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default SearchBar;
+// Update this page (the content is just a fallback if you fail to update the page)
+
+const Index = () => {
+import React from "react";
+import AdminForumList from "../components/admin/AdminForumList";
+
+const Index: React.FC = () => {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
+        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+      </div>
+    </div>
+    <main className="min-h-screen">
+      <AdminForumList />
+    </main>
+  );
+};
+

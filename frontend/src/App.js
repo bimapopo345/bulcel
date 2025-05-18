@@ -16,6 +16,7 @@ import Login_Admin from "./components/auth/Login_Admin";
 import AdminLayout from "./components/admin/AdminLayout";
 import AdminWorkshopList from "./components/admin/admin_Workshop_List";
 import MainContent from "./components/admin/components/MainContent";
+import AdminForumList from "./components/admin/admin_Forum_List";
 import "./App.css";
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<MainContent />} />
           <Route path="workshop-list" element={<AdminWorkshopList />} />
+          <Route path="forum-list" element={<AdminForumList />} />
         </Route>
       </Routes>
     </Router>
