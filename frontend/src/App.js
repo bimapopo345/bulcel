@@ -12,6 +12,8 @@ import Register_Organizer_Successfull from "./components/auth/Register_Organizer
 import Search_HomePage from "./components/search/page/Search_HomePage";
 import Refund from "./components/refund/Refund";
 import Refund_Successful from "./components/refund/Refund_Successful";
+import Login_Admin from "./components/auth/Login_Admin";
+import AdminLayout from "./components/admin/AdminLayout";
 import "./App.css";
 
 function App() {
@@ -36,6 +38,8 @@ function App() {
         <Route path="/search" element={<Search_HomePage />} />
         <Route path="/refund" element={<Refund />} />
         <Route path="/refund-success" element={<Refund_Successful />} />
+        <Route path="/login-admin" element={<Login_Admin />} />
+        <Route path="/admin" element={<AdminLayout />} />
       </Routes>
     </Router>
   );
