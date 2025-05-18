@@ -1,41 +1,60 @@
+// src/components/Hero.jsx
 import React from "react";
+import { Headphones } from "lucide-react"; // ganti ikon bila perlu
 
 const Hero = () => {
   return (
-    <div className="flex flex-wrap ml-[26px] mr-[30px] mt-56 max-md:max-w-full max-md:mr-2.5 max-md:mt-10">
-      <div className="min-w-60 w-[613px] max-md:max-w-full">
-        <div className="flex w-full items-center gap-[-1000px] text-[#FF5126] justify-center flex-wrap max-md:max-w-full">
-          <div className="self-stretch flex min-w-60 min-h-[164px] items-center text-[300px] font-normal whitespace-nowrap leading-[0.5] justify-center w-[613px] my-auto max-md:max-w-full max-md:text-[40px]">
-            <div className="text-[#FF5126] opacity-50 self-stretch w-[316px] my-auto max-md:text-[40px]">
-              TK
-            </div>
-          </div>
-          <div className="text-[#FF5126] self-stretch min-w-60 gap-2.5 text-8xl font-bold flex-1 shrink basis-[0%] my-auto p-2.5 max-md:max-w-full max-md:text-[40px]">
-            TIKET KARYA
-          </div>
+    <section className="bg-[#F9EFE2] px-6 py-24">
+      <div className="mx-auto max-w-6xl">
+        {/* ===== AREA 1 – JUDUL ===== */}
+        <div className="relative">
+          {/* TK sebagai background */}
+          <span className="pointer-events-none absolute -top-24 -left-6 -z-10 select-none font-logo text-[300px] leading-none text-[#FF5126]/35 md:-top-28 md:text-[340px]">
+            TK
+          </span>
+
+          <h1 className="text-6xl font-extrabold tracking-tight text-[#FF5126] md:text-7xl">
+            TIKET&nbsp;KARYA
+          </h1>
         </div>
-        <div className="max-w-full w-[596px] text-lg text-black font-normal mt-[67px] max-md:mt-10">
-          <div className="text-black leading-7 max-md:max-w-full">
-            Discover creative workshops near you — from hands-on pottery to
-            soulful music and textile arts. Join a growing community of makers,
-            artists, and curious minds looking to learn, connect, and create
-            together. Whether you're trying something new or deepening your
-            skills, TiketKarya makes it easy to find, book, and enjoy creative
-            experiences that spark inspiration.
+
+        {/* ===== AREA 2 – KONTEN BARIS ===== */}
+        <div className="mt-14 flex flex-col gap-10 lg:flex-row">
+          {/* —— KIRI —— */}
+          <div className="w-full lg:w-1/2">
+            <p className="text-lg leading-7 text-gray-900">
+              Discover creative workshops near you — from hands‑on pottery to
+              soulful music and textile arts. Join a growing community of
+              makers, artists, and curious minds looking to learn, connect, and
+              create together. Whether you're trying something new or deepening
+              your skills, TiketKarya makes it easy to find, book, and enjoy
+              creative experiences that spark inspiration.
+            </p>
+
+            <a
+              href="#workshops"
+              className="mt-6 inline-block text-base font-medium underline"
+            >
+              Find Workshops
+            </a>
           </div>
-          <div className="text-black leading-loose mt-[9px] max-md:max-w-full">
-            <span className="underline">Find Workshops</span>
+
+          {/* —— KANAN —— */}
+          <div className="flex w-full flex-col items-center lg:w-1/2 lg:items-end">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/cc19c8fb85a142d1a49f6d5b2b38adc8/cc2d429b2bc30faada8a05a4ab119dfe6fd1f9b7?placeholderIfAbsent=true"
+              alt="Pottery workshop"
+              className="w-72 rounded-md object-cover shadow-lg md:w-96"
+            />
+
+            <button className="mt-6 flex items-center gap-2 rounded-full bg-[#FF5126] px-6 py-3 text-sm font-semibold text-white shadow-md hover:bg-[#ff693f]">
+              <Headphones size={18} />
+              Customer Support
+            </button>
           </div>
         </div>
       </div>
-      <div className="min-w-60 w-[362px]">
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/cc19c8fb85a142d1a49f6d5b2b38adc8/cc2d429b2bc30faada8a05a4ab119dfe6fd1f9b7?placeholderIfAbsent=true"
-          alt="Creative Workshop"
-          className="aspect-[1.61] object-contain w-full"
-        />
-      </div>
-    </div>
+    </section>
   );
 };
 

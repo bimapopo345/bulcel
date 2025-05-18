@@ -6,7 +6,6 @@ import FAQ from "./home/FAQ";
 import Connect from "./home/Connect";
 import Featured from "./home/Featured";
 import Footer from "./layout/Footer";
-import CustomerSupport from "./ui/CustomerSupport";
 
 const HomePage = () => {
   return (
@@ -15,7 +14,6 @@ const HomePage = () => {
         <div className="flex w-full flex-col items-stretch px-[50px] max-md:max-w-full max-md:px-5">
           <Navbar />
           <Hero />
-          <CustomerSupport />
         </div>
         <About />
         <FAQ />
