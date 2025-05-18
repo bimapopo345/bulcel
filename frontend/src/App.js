@@ -17,6 +17,7 @@ import AdminLayout from "./components/admin/AdminLayout";
 import AdminWorkshopList from "./components/admin/admin_Workshop_List";
 import MainContent from "./components/admin/components/MainContent";
 import AdminForumList from "./components/admin/admin_Forum_List";
+import AdminCreativeCorner from "./components/admin/admin_Creative_Corner";
 import "./App.css";
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
           <Route index element={<MainContent />} />
           <Route path="workshop-list" element={<AdminWorkshopList />} />
           <Route path="forum-list" element={<AdminForumList />} />
+          <Route path="creative-corner" element={<AdminCreativeCorner />} />
         </Route>
       </Routes>
     </Router>
