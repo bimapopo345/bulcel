@@ -4,9 +4,9 @@ import { NavLink } from "react-router-dom";
 
 const SidebarItem = ({ children, to, active = false }) => {
   const baseClasses = `
-    block w-full px-4 py-2 rounded-md cursor-pointer
-    text-lg font-medium text-left
-    transition-colors duration-200 mb-2
+        block w-full px-4 py-2 rounded-md cursor-pointer
+        text-lg font-medium text-left truncate
+        transition-colors duration-200 mb-2 mx-2
   `;
 
   return to ? (
@@ -17,7 +17,9 @@ const SidebarItem = ({ children, to, active = false }) => {
         ${isActive ? "bg-[#FCEDDA]" : "hover:bg-[#FCEDDA]/50"}
       `}
     >
-      <div className="flex items-center">{children}</div>
+      <div className="flex items-center overflow-hidden">
+        <span className="truncate">{children}</span>
+      </div>
     </NavLink>
   ) : (
     <div
@@ -26,7 +28,9 @@ const SidebarItem = ({ children, to, active = false }) => {
         ${active ? "bg-[#FCEDDA]" : "hover:bg-[#FCEDDA]/50"}
       `}
     >
-      <div className="flex items-center">{children}</div>
+      <div className="flex items-center overflow-hidden">
+        <span className="truncate">{children}</span>
+      </div>
     </div>
   );
 };

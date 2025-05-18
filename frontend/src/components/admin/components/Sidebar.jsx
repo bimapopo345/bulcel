@@ -31,7 +31,7 @@ const Sidebar = () => {
   ]);
 
   return (
-    <div className="bg-[#FFDEB5] rounded-lg shadow-lg h-screen sticky top-0">
+    <div className="bg-[#FFDEB5] rounded-lg shadow-lg h-screen sticky top-0 flex flex-col max-w-[280px]">
       {/* Header */}
       <div className="bg-[#FF570C] rounded-t-lg py-6 px-4">
         <div className="text-center">
@@ -52,12 +52,12 @@ const Sidebar = () => {
               className="w-8 h-8"
             />
           </div>
-          <span className="text-lg font-medium">Admin XYZ</span>
+          <span className="text-lg font-medium truncate">Admin XYZ</span>
         </div>
       </div>
 
-      {/* Navigation */}
-      <nav className="p-4 overflow-y-auto">
+      {/* Navigation - Flex grow to push logout to bottom */}
+      <nav className="flex-1 px-2 py-4 overflow-y-auto">
         {/* Analytics */}
         <SidebarItem to="/admin">Analytics</SidebarItem>
 
@@ -71,17 +71,17 @@ const Sidebar = () => {
             ))}
           </SidebarSection>
         ))}
-
-        {/* Logout Button */}
-        <div className="mt-6">
-          <button
-            onClick={() => navigate("/login-admin")}
-            className="w-full text-center py-2 text-[#FF5126] hover:text-[#FF570C] transition-colors font-medium"
-          >
-            Logout
-          </button>
-        </div>
       </nav>
+
+      {/* Logout Button - Fixed at bottom */}
+      <div className="px-4 py-4 border-t border-[#FCEDDA]">
+        <button
+          onClick={() => navigate("/login-admin")}
+          className="w-full text-center py-2 text-[#FF5126] hover:text-[#FF570C] transition-colors font-medium rounded-md hover:bg-[#FCEDDA]/50"
+        >
+          Logout
+        </button>
+      </div>
     </div>
   );
 };
