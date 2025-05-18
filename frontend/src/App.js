@@ -10,6 +10,8 @@ import Reset_Password_Successfull from "./components/auth/Reset_Password_Success
 import Register_Organizer from "./components/auth/Register_Organizer";
 import Register_Organizer_Successfull from "./components/auth/Register_Organizer_Successfull";
 import Search_HomePage from "./components/search/page/Search_HomePage";
+import Refund from "./components/refund/Refund";
+import Refund_Successful from "./components/refund/Refund_Successful";
 import "./App.css";
 
 function App() {
@@ -32,6 +34,8 @@ function App() {
           element={<Register_Organizer_Successfull />}
         />
         <Route path="/search" element={<Search_HomePage />} />
+        <Route path="/refund" element={<Refund />} />
+        <Route path="/refund-success" element={<Refund_Successful />} />
       </Routes>
     </Router>
   );
