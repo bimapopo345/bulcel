@@ -5,6 +5,8 @@ import Login from "./components/auth/Login";
 import Login_Successfull from "./components/auth/Login_Successfull";
 import Register from "./components/auth/Register";
 import Register_Successfull from "./components/auth/Register_Successfull";
+import Reset_Password from "./components/auth/Reset_Password";
+import Reset_Password_Successfull from "./components/auth/Reset_Password_Successfull";
 import "./App.css";
 
 function App() {
@@ -16,6 +18,11 @@ function App() {
         <Route path="/login-success" element={<Login_Successfull />} />
         <Route path="/register" element={<Register />} />
         <Route path="/register-success" element={<Register_Successfull />} />
+        <Route path="/reset-password" element={<Reset_Password />} />
+        <Route
+          path="/reset-password-success"
+          element={<Reset_Password_Successfull />}
+        />
       </Routes>
     </Router>
   );

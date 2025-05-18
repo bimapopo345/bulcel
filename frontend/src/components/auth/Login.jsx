@@ -17,6 +17,10 @@ const Login = () => {
     navigate("/register");
   };
 
+  const handleForgotPassword = () => {
+    navigate("/reset-password");
+  };
+
   return (
     <main className="flex flex-col items-stretch bg-[#FCEDDA] min-h-screen">
       <div className="flex flex-1">
@@ -84,7 +88,7 @@ const Login = () => {
               <div className="self-center flex w-[250px] max-w-full flex-col items-stretch text-base text-black font-normal leading-7 justify-center mt-[26px] mx-auto">
                 <button
                   className="text-center self-center underline"
-                  onClick={() => console.log("Forgot password clicked")}
+                  onClick={handleForgotPassword}
                 >
                   Forgot your password?
                 </button>
