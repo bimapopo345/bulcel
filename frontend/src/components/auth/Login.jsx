@@ -13,10 +13,13 @@ const Login = () => {
     }
   };
 
+  const handleSignUp = () => {
+    navigate("/register");
+  };
+
   return (
     <main className="flex flex-col items-stretch bg-[#FCEDDA] min-h-screen">
       <div className="flex flex-1">
-        {/* Container with fixed max-width and 50-50 split */}
         <div className="flex w-full max-w-[1440px] mx-auto">
           {/* Left side - Image - 50% */}
           <div className="w-1/2 flex items-center justify-center p-8 max-md:hidden">
@@ -92,7 +95,7 @@ const Login = () => {
                   </span>
                   <button
                     className="self-stretch my-auto underline"
-                    onClick={() => console.log("Sign up clicked")}
+                    onClick={handleSignUp}
                   >
                     Sign Up
                   </button>
