@@ -1,0 +1,320 @@
+>> dari kode saya ambil dibawah ini, buatkan login.jsx, isinya 1 file ya jangan aneh aneh : ( buatkan tampilan aja jangan backend dulu ) ( tolong sekali rapiin username password nya sejajar kebawah jangan menyamping dan responsive design yg bagus
+
+buat 2 file : code login (login.jsx) & login_successfull.jsx ( setalh berhasil login )
+
+>> note karena tanpa backend dulu karena mau test, bisa ga kamu buatkan login nya username "bul" password "bul", nanti kalau ketik itu maka akan mengarah ke halaman login_successfull.jsx
+
+--=-= code login
+
+import React from "react";
+
+interface AuthLinksProps {
+  className?: string;
+}
+
+export const AuthLinks: React.FC<AuthLinksProps> = ({ className }) => {
+  return (
+    <div className={`self-center flex w-[250px] max-w-full flex-col items-stretch text-base text-black font-normal leading-7 justify-center mt-[26px] ${className}`}>
+      <button 
+        className="text-center self-center underline"
+        onClick={() => console.log("Forgot password clicked")}
+      >
+        Forgot your password?
+      </button>
+      
+      <div className="flex w-full items-center gap-[30px] mt-[35px]">
+        <span className="self-stretch my-auto">
+          Don't have an account?
+        </span>
+        <button 
+          className="self-stretch my-auto underline"
+          onClick={() => console.log("Sign up clicked")}
+        >
+          Sign Up
+        </button>
+      </div>
+    </div>
+  );
+};
+
+
+import React from "react";
+
+interface NavbarProps {
+  className?: string;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ className }) => {
+  return (
+    <nav 
+      className={`self-center flex min-h-20 w-full max-w-[1340px] items-center gap-[40px_100px] text-black justify-between flex-wrap py-2.5 max-md:max-w-full ${className}`}
+      aria-label="Main Navigation"
+    >
+      <div className="self-stretch flex min-w-60 items-center gap-[22px] text-lg whitespace-nowrap text-center underline leading-[27px] w-[410px] my-auto">
+        <button 
+          className="font-bold self-stretch w-[70px] my-auto"
+          aria-current="page"
+        >
+          English
+        </button>
+        <button 
+          className="font-normal self-stretch w-[70px] my-auto"
+        >
+          Bahasa
+        </button>
+      </div>
+      
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/cc19c8fb85a142d1a49f6d5b2b38adc8/c5ecc94bded26a691941f6509f60b002e1c2813c?placeholderIfAbsent=true"
+        alt="Company Logo"
+        className="aspect-[1.42] object-contain w-[85px] self-stretch shrink-0 my-auto"
+      />
+      
+      <div className="self-stretch flex min-w-60 items-center gap-[30px] text-[15px] font-medium my-auto">
+        <button 
+          className="text-center self-stretch w-[70px] my-auto"
+        >
+          SEARCH
+        </button>
+        <button 
+          className="text-center self-stretch w-[70px] my-auto"
+        >
+          FORUM
+        </button>
+        <button 
+          className="text-center self-stretch w-[70px] my-auto"
+        >
+          ARTICLES
+        </button>
+        <div className="self-stretch flex flex-col items-center text-base text-[#F7F7F7] justify-center w-[110px]">
+          <button 
+            className="text-[#F7F7F7] self-stretch min-h-[30px] w-[90px] gap-2.5 bg-black px-2.5 py-[3px] rounded-[15px]"
+            aria-current="page"
+          >
+            SIGN IN
+          </button>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+
+import React, { useState } from "react";
+
+interface SignInFormProps {
+  className?: string;
+}
+
+export const SignInForm: React.FC<SignInFormProps> = ({ className }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle sign in logic here
+    console.log("Sign in with:", { email, password });
+  };
+
+  return (
+    <form 
+      onSubmit={handleSubmit}
+      className={`self-stretch flex min-w-60 flex-col items-stretch w-[490px] my-auto max-md:max-w-full ${className}`}
+    >
+      <div className="w-full max-md:max-w-full">
+        <h1 
+          className="text-black text-center text-5xl font-bold leading-none max-md:max-w-full max-md:text-[40px]"
+        >
+          Sign In
+        </h1>
+        <div className="w-full font-normal mt-[41px] max-md:max-w-full max-md:mt-10">
+          <div className="w-full text-[15px] text-black whitespace-nowrap max-md:max-w-full">
+            <label htmlFor="email" className="sr-only">Email</label>
+            <input
+              id="email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email"
+              required
+              className="self-stretch min-h-[29px] w-full gap-2.5 py-[3px] border-b-[3px] border-black max-md:max-w-full bg-transparent focus:outline-none"
+            />
+            
+            <label htmlFor="password" className="sr-only">Password</label>
+            <input
+              id="password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+              required
+              className="self-stretch min-h-[29px] w-full gap-2.5 mt-7 py-[3px] border-b-[3px] border-black max-md:max-w-full bg-transparent focus:outline-none"
+            />
+          </div>
+          <button
+            type="submit"
+            className="text-black self-stretch min-h-[55px] w-full gap-2.5 text-xl bg-[#FFDEB5] mt-[27px] px-2.5 py-[13px] rounded-[50px] max-md:max-w-full hover:bg-[#FFD19F] transition-colors"
+          >
+            SIGN IN
+          </button>
+        </div>
+      </div>
+    </form>
+  );
+};
+
+
+
+-=-=-= login_successfull.jsx
+
+
+import React from "react";
+import { Navbar } from "../layout/Navbar";
+import { SuccessMessage } from "./SuccessMessage";
+import { useNavigate } from "react-router-dom";
+
+export const SignInSuccess: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleContinue = () => {
+    // Navigate to dashboard or home page
+    navigate("/dashboard");
+  };
+
+  return (
+    <main className="flex flex-col overflow-hidden items-stretch bg-[#FCEDDA] pt-1.5 pb-[167px] px-[39px] max-md:pb-[100px] max-md:px-5">
+      <Navbar />
+      
+      <section className="flex items-center gap-[40px_130px] justify-center flex-wrap mt-11 max-md:max-w-full max-md:mt-10">
+        <div className="self-stretch min-w-60 w-[650px] my-auto rounded-[15px] max-md:max-w-full">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/cc19c8fb85a142d1a49f6d5b2b38adc8/bfbd4cb16b365e1694925c5aa26bac5b583b306f?placeholderIfAbsent=true"
+            alt="Success Illustration"
+            className="aspect-[0.89] object-contain w-full rounded-[15px] max-md:max-w-full"
+          />
+        </div>
+        
+        <div className="self-stretch min-w-60 w-[521px] my-auto max-md:max-w-full">
+          <SuccessMessage
+            title="Sign In Successful"
+            message="Welcome back! You have successfully signed in."
+            onContinue={handleContinue}
+          />
+        </div>
+      </section>
+    </main>
+  );
+};
+
+
+import React from "react";
+
+interface SuccessMessageProps {
+  title: string;
+  message: string;
+  onContinue: () => void;
+}
+
+export const SuccessMessage: React.FC<SuccessMessageProps> = ({
+  title,
+  message,
+  onContinue,
+}) => {
+  return (
+    <div className="flex w-full flex-col items-stretch max-md:max-w-full">
+      <div className="flex w-full flex-col items-stretch text-black text-center max-md:max-w-full">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/cc19c8fb85a142d1a49f6d5b2b38adc8/1d233a1ca8a30219e2833e46c826e8125b1a5d88?placeholderIfAbsent=true"
+          alt="Success Icon"
+          className="aspect-[1] object-contain w-[110px] self-center max-w-full"
+        />
+        <div className="w-full mt-[33px] max-md:max-w-full">
+          <h1 className="text-4xl font-bold max-md:max-w-full">{title}</h1>
+          <p className="text-lg font-normal leading-7 mt-[15px] max-md:max-w-full">
+            {message}
+          </p>
+        </div>
+      </div>
+      <button
+        onClick={onContinue}
+        className="text-[#F7F7F7] self-center rounded min-h-[60px] w-[400px] max-w-full gap-2.5 text-2xl font-semibold whitespace-nowrap bg-black mt-[129px] px-2.5 py-3 max-md:mt-10 hover:bg-gray-800 transition-colors"
+        aria-label="Continue to dashboard"
+      >
+        Continue
+      </button>
+    </div>
+  );
+};
+
+
+import React from "react";
+import { LanguageSelector } from "../ui/LanguageSelector";
+
+export const Navbar: React.FC = () => {
+  return (
+    <nav
+      className="flex min-h-20 w-full items-center gap-[40px_100px] text-black justify-between flex-wrap ml-[11px] py-2.5 max-md:max-w-full"
+      aria-label="Main Navigation"
+    >
+      <LanguageSelector />
+      
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/cc19c8fb85a142d1a49f6d5b2b38adc8/c5ecc94bded26a691941f6509f60b002e1c2813c?placeholderIfAbsent=true"
+        alt="Company Logo"
+        className="aspect-[1.42] object-contain w-[85px] self-stretch shrink-0 my-auto"
+      />
+      
+      <div className="self-stretch flex min-w-60 items-center gap-[30px] text-[15px] font-medium my-auto">
+        <button className="text-center self-stretch w-[70px] my-auto hover:underline">
+          SEARCH
+        </button>
+        <button className="text-center self-stretch w-[70px] my-auto hover:underline">
+          FORUM
+        </button>
+        <button className="text-center self-stretch w-[70px] my-auto hover:underline">
+          ARTICLES
+        </button>
+        <div className="self-stretch flex flex-col items-center text-base text-[#F7F7F7] justify-center w-[110px]">
+          <button className="text-[#F7F7F7] self-stretch min-h-[30px] w-[90px] gap-2.5 bg-black px-2.5 py-[3px] rounded-[15px] hover:bg-gray-800 transition-colors">
+            SIGN IN
+          </button>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+import React, { useState } from "react";
+
+type Language = "English" | "Bahasa";
+
+export const LanguageSelector: React.FC = () => {
+  const [selectedLanguage, setSelectedLanguage] = useState<Language>("English");
+
+  const handleLanguageChange = (language: Language) => {
+    setSelectedLanguage(language);
+  };
+
+  return (
+    <div className="self-stretch flex min-w-60 items-center gap-[22px] text-lg whitespace-nowrap text-center underline leading-[27px] w-[410px] my-auto">
+      <button
+        className={`self-stretch w-[70px] my-auto ${
+          selectedLanguage === "English" ? "font-bold" : "font-normal"
+        }`}
+        onClick={() => handleLanguageChange("English")}
+        aria-pressed={selectedLanguage === "English"}
+      >
+        English
+      </button>
+      <button
+        className={`self-stretch w-[70px] my-auto ${
+          selectedLanguage === "Bahasa" ? "font-bold" : "font-normal"
+        }`}
+        onClick={() => handleLanguageChange("Bahasa")}
+        aria-pressed={selectedLanguage === "Bahasa"}
+      >
+        Bahasa
+      </button>
+    </div>
+  );
+};
