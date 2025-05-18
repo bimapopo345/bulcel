@@ -1,59 +1,76 @@
+// src/components/About.jsx
 import React from "react";
+import { FaTwitter, FaInstagram, FaTiktok } from "react-icons/fa"; // bebas ganti ikon
 
 const About = () => {
   return (
-    <div className="flex items-center justify-between flex-wrap mt-[60px] max-md:max-w-full max-md:mt-10">
-      <div className="flex flex-col self-stretch relative min-h-[625px] min-w-60 items-center justify-center w-[589px] my-auto max-md:max-w-full">
+    <section className="flex flex-col lg:flex-row">
+      {/* ===== KIRI 30 % ===== */}
+      <div className="relative flex w-full items-center justify-center lg:w-[40%]">
+        {/* background foto */}
         <img
           src="https://cdn.builder.io/api/v1/image/assets/cc19c8fb85a142d1a49f6d5b2b38adc8/7950718139f3a660d1ce5fb2d767acdf9016f780?placeholderIfAbsent=true"
-          alt="Background"
-          className="absolute h-full w-full object-cover inset-0"
+          alt="Creative studio background"
+          className="absolute inset-0 h-full w-full object-cover"
         />
+
+        {/* ikon putih di tengah */}
         <img
           src="https://cdn.builder.io/api/v1/image/assets/cc19c8fb85a142d1a49f6d5b2b38adc8/58df4650d56c4d0ad9d681d1c55532bcb5890988?placeholderIfAbsent=true"
-          alt="About Image"
-          className="aspect-[1.42] object-contain w-[589px] max-w-full relative z-10"
+          alt="TiketKarya logo"
+          className="relative z-10 w-56 lg:w-72"
         />
       </div>
-      <div className="items-stretch self-stretch flex min-w-60 min-h-[625px] flex-col text-[#F7F7F7] justify-center w-[851px] bg-[#FF5126] my-auto px-[58px] py-[33px] max-md:max-w-full max-md:px-5">
-        <div className="w-full max-w-[721px] flex-1 max-md:max-w-full">
-          <div className="flex w-full gap-[40px_100px] text-[64px] font-bold whitespace-nowrap justify-between flex-wrap max-md:max-w-full max-md:text-[40px]">
-            <div className="flex items-center gap-[15px] max-md:text-[40px]">
-              <div className="text-[#F7F7F7] self-stretch gap-2.5 my-auto p-2.5 max-md:text-[40px]">
-                ABOUT
-              </div>
-            </div>
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/cc19c8fb85a142d1a49f6d5b2b38adc8/f8d22cd0b9b495f18fd374f75efb2b4bc18fe7a3?placeholderIfAbsent=true"
-              alt="Decoration"
-              className="aspect-[3] object-contain w-[99px] shrink-0"
-            />
-          </div>
-          <div className="flex w-full gap-[40px_153px] text-lg font-normal flex-1 flex-wrap h-full mt-[170px] max-md:max-w-full max-md:mt-10">
-            <div className="min-w-60 leading-7 grow shrink w-[495px] max-md:max-w-full">
-              <div className="text-[#F7F7F7] max-md:max-w-full">
-                TiketKarya offers an easy and inspiring way to discover creative
-                programs, all in one place. With a clean interface and smart
-                search tools, users can explore workshops that match their
-                interests—from pottery and painting to textile arts and music.
-                Signing up is simple, with flexible payment options to make the
-                process smooth and accessible.
-              </div>
-              <div className="text-[#F7F7F7] mt-10 max-md:max-w-full">
-                Interactive features like reviews, ratings, and forum
-                discussions help users share experiences and discover trusted
-                recommendations. TiketKarya opens wider access to the creative
-                world, builds an active community, and supports the growth of a
-                more inclusive and connected creative industry.
-              </div>
-            </div>
-            <div className="text-[#F7F7F7] underline decoration-solid decoration-auto underline-offset-auto underline grow shrink w-[49px]">
-              Explore
-            </div>
+
+      {/* ===== KANAN 70 % ===== */}
+      <div className="relative flex w-full flex-col justify-center bg-[#FF5126] px-8 py-16 text-[#F7F7F7] lg:w-[60%]">
+        {/* baris judul + ikon sosmed */}
+        <div className="mb-10 flex items-center justify-between">
+          <h2 className="text-5xl font-bold tracking-wide md:text-6xl">
+            ABOUT
+          </h2>
+
+          <div className="flex gap-4 text-2xl">
+            <a href="https://twitter.com" aria-label="Twitter">
+              <FaTwitter />
+            </a>
+            <a href="https://instagram.com" aria-label="Instagram">
+              <FaInstagram />
+            </a>
+            <a href="https://tiktok.com" aria-label="TikTok">
+              <FaTiktok />
+            </a>
           </div>
         </div>
+
+        {/* teks deskripsi */}
+        <div className="max-w-2xl space-y-8 text-lg leading-7">
+          <p>
+            TiketKarya offers an easy and inspiring way to discover creative
+            programs, all in one place. With a clean interface and smart search
+            tools, users can explore workshops that match their interests—from
+            pottery and painting to textile arts and music. Signing up is
+            simple, with flexible payment options to make the process smooth and
+            accessible.
+          </p>
+
+          <p>
+            Interactive features like reviews, ratings, and forum discussions
+            help users share experiences and discover trusted recommendations.
+            TiketKarya opens wider access to the creative world, builds an
+            active community, and supports the growth of a more inclusive and
+            connected creative industry.
+          </p>
+
+          <a
+            href="#explore"
+            className="inline-block underline underline-offset-4"
+          >
+            Explore
+          </a>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
