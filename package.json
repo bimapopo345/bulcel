@@ -1,23 +1,14 @@
 {
-  "name": "cel1",
+  "name": "tiketkarya",
   "version": "1.0.0",
-  "description": "MERN Stack Application",
-  "main": "index.js",
+  "description": "TiketKarya - Creative Workshop Booking Platform",
   "scripts": {
-    "start": "node backend/server.js",
-    "server": "nodemon --watch backend backend/server.js",
-    "client": "cd frontend && npm start",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "start": "concurrently \"cd backend && npm start\" \"cd frontend && npm start\"",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\"",
+    "install-deps": "concurrently \"cd backend && npm install\" \"cd frontend && npm install\"",
+    "setup": "npm run install-deps && cd backend && npm run setup-db"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "concurrently": "^8.2.0",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "mongoose": "^7.1.1",
-    "nodemon": "^2.0.22"
+  "devDependencies": {
+    "concurrently": "^8.0.1"
   }
 }
