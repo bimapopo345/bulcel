@@ -1,28 +1,44 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
+  const handleNavigation = (path) => {
+    navigate(path, { replace: true });
+    // Force a reload to ensure proper navigation
+    window.location.href = path;
+  };
+
   return (
-    <div className="flex min-h-20 w-full items-center gap-[40px_100px] justify-between flex-wrap max-md:max-w-full">
+    <nav className="flex min-h-20 w-full items-center gap-[40px_100px] justify-between flex-wrap max-md:max-w-full relative z-10">
       <div className="self-stretch flex min-w-60 items-center gap-[22px] text-lg text-black whitespace-nowrap text-center underline leading-[27px] w-[410px] my-auto">
         <div className="font-bold self-stretch w-[70px] my-auto">English</div>
         <div className="font-normal self-stretch w-[70px] my-auto">Bahasa</div>
       </div>
-      <img
-        src="https://cdn.builder.io/api/v1/image/assets/cc19c8fb85a142d1a49f6d5b2b38adc8/3a1bc9cefadf0658c19a552cd245ebafc9e83053?placeholderIfAbsent=true"
-        alt="TiketKarya Logo"
-        className="aspect-[1.37] object-contain w-[82px] self-stretch shrink-0 my-auto"
-      />
-      <div className="self-stretch flex min-w-60 items-center gap-[30px] w-[406px] my-auto">
-        <Link
-          to="/search"
-          className="text-black text-[15px] font-medium text-center self-stretch w-[70px] my-auto cursor-pointer"
+      <button onClick={() => handleNavigation("/")} className="cursor-pointer">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/cc19c8fb85a142d1a49f6d5b2b38adc8/3a1bc9cefadf0658c19a552cd245ebafc9e83053?placeholderIfAbsent=true"
+          alt="TiketKarya Logo"
+          className="aspect-[1.37] object-contain w-[82px] self-stretch shrink-0 my-auto"
+        />
+      </button>
+      <div
+        className="self-stretch flex min-w-60 items-center gap-[30px] w-[406px] my-auto"
+        role="navigation"
+      >
+        <button
+          onClick={() => handleNavigation("/search")}
+          className="text-black text-[15px] font-medium text-center self-stretch w-[70px] my-auto cursor-pointer hover:text-[#FF570C] transition-colors"
         >
           SEARCH
-        </Link>
-        <div className="text-black text-[15px] font-medium text-center self-stretch w-[70px] my-auto">
+        </button>
+        <button
+          onClick={() => handleNavigation("/forum")}
+          className="text-black text-[15px] font-medium text-center self-stretch w-[70px] my-auto cursor-pointer hover:text-[#FF570C] transition-colors"
+        >
           FORUM
-        </div>
+        </button>
         <div className="text-black text-[15px] font-medium text-center self-stretch w-[70px] my-auto">
           ARTICLES
         </div>
@@ -50,7 +66,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 

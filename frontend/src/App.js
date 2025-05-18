@@ -18,6 +18,7 @@ import AdminWorkshopList from "./components/admin/admin_Workshop_List";
 import MainContent from "./components/admin/components/MainContent";
 import AdminForumList from "./components/admin/admin_Forum_List";
 import AdminCreativeCorner from "./components/admin/admin_Creative_Corner";
+import ForumWrapper from "./components/forum";
 import "./App.css";
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
           element={<Register_Organizer_Successfull />}
         />
         <Route path="/search" element={<Search_HomePage />} />
+        <Route path="/forum" element={<ForumWrapper />} />
         <Route path="/refund" element={<Refund />} />
         <Route path="/refund-success" element={<Refund_Successful />} />
         <Route path="/login-admin" element={<Login_Admin />} />
